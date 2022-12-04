@@ -1,9 +1,8 @@
 const input = document.querySelector("input");
-const requiredNumLength = input.getAttribute("data-length");
+const requiredNumLength = Number(input.getAttribute("data-length"));
 
 input.addEventListener("blur", () => {
-    if(input.value.length === requiredNumLength){
-        
-    }
-})
-
+  input.value.length === requiredNumLength
+    ? input.classList.add("valid")
+    : input.classList.add("invalid");
+});
